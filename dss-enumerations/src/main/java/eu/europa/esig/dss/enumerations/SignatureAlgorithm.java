@@ -233,7 +233,19 @@ public enum SignatureAlgorithm implements OidAndUriBasedEnum {
 	ED25519(EncryptionAlgorithm.EDDSA, DigestAlgorithm.SHA512),
 
 	/** EDDSA with SHAKE256-512 */
-	ED448(EncryptionAlgorithm.EDDSA, DigestAlgorithm.SHAKE256_512);
+	ED448(EncryptionAlgorithm.EDDSA, DigestAlgorithm.SHAKE256_512),
+
+	/** BIGN with BELT **/
+	BIGN_WITH_BELT(EncryptionAlgorithm.BIGN, DigestAlgorithm.BELT),
+
+	/** BIGN with BASH-256 **/
+	BIGN_WITH_BASH256(EncryptionAlgorithm.BIGN, DigestAlgorithm.BASH256),
+
+	/** BIGN with BASH-384 **/
+	BIGN_WITH_BASH384(EncryptionAlgorithm.BIGN, DigestAlgorithm.BASH384),
+
+	/** BIGN with BASH-512 **/
+	BIGN_WITH_BASH512(EncryptionAlgorithm.BIGN, DigestAlgorithm.BASH512);
 
 	/** The encryption algorithm */
 	private final EncryptionAlgorithm encryptionAlgo;
@@ -302,6 +314,11 @@ public enum SignatureAlgorithm implements OidAndUriBasedEnum {
 		xmlAlgorithms.put("http://www.w3.org/2001/04/xmldsig-more#hmac-sha384", HMAC_SHA384);
 		xmlAlgorithms.put("http://www.w3.org/2001/04/xmldsig-more#hmac-sha512", HMAC_SHA512);
 		xmlAlgorithms.put("http://www.w3.org/2001/04/xmldsig-more#hmac-ripemd160", HMAC_RIPEMD160);
+
+		xmlAlgorithms.put("http://www.w3.org/2009/xmldsig11#bign-with-hbelt", BIGN_WITH_BELT);
+		xmlAlgorithms.put("http://www.w3.org/2009/xmldsig11#bign-with-bash256", BIGN_WITH_BASH256);
+		xmlAlgorithms.put("http://www.w3.org/2009/xmldsig11#bign-with-bash384", BIGN_WITH_BASH384);
+		xmlAlgorithms.put("http://www.w3.org/2009/xmldsig11#bign-with-bash512", BIGN_WITH_BASH512);
 		// Following end.
 		return xmlAlgorithms;
 	}
@@ -410,6 +427,11 @@ public enum SignatureAlgorithm implements OidAndUriBasedEnum {
 
 		oidAlgorithms.put("1.2.840.113549.1.1.10", RSA_SSA_PSS_SHA1_MGF1);
 
+		oidAlgorithms.put("1.2.112.0.2.0.34.101.45.12", BIGN_WITH_BELT);
+		oidAlgorithms.put("1.2.112.0.2.0.34.101.45.13", BIGN_WITH_BASH256);
+		oidAlgorithms.put("1.2.112.0.2.0.34.101.45.14", BIGN_WITH_BASH384);
+		oidAlgorithms.put("1.2.112.0.2.0.34.101.45.15", BIGN_WITH_BASH512);
+
 		return oidAlgorithms;
 	}
 
@@ -516,6 +538,12 @@ public enum SignatureAlgorithm implements OidAndUriBasedEnum {
 		javaAlgorithms.put("SHA3-512withHMAC", HMAC_SHA3_512);
 
 		javaAlgorithms.put("RIPEMD160withHMAC", HMAC_RIPEMD160);
+
+		javaAlgorithms.put("BignWithBelt", BIGN_WITH_BELT);
+		javaAlgorithms.put("BignWithBash256", BIGN_WITH_BASH256);
+		javaAlgorithms.put("BignWithBash384", BIGN_WITH_BASH384);
+		javaAlgorithms.put("BignWithBash512", BIGN_WITH_BASH512);
+
 		return javaAlgorithms;
 	}
 

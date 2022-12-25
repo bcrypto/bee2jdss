@@ -51,7 +51,10 @@ public enum EncryptionAlgorithm implements OidBasedEnum {
 	EDDSA("EdDSA", "", "EdDSA"),
 
 	/** HMAC */
-	HMAC("HMAC", "", "");
+	HMAC("HMAC", "", ""),
+
+	/** BIGN **/
+	BIGN("Bign","1.2.112.0.2.0.34.101.45.2.1","");
 
 	/** The name of the algorithm */
 	private String name;

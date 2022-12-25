@@ -82,7 +82,19 @@ public enum DigestAlgorithm implements OidAndUriBasedEnum {
 	MD5("MD5", "MD5", "1.2.840.113549.2.5", "http://www.w3.org/2001/04/xmldsig-more#md5", null, "MD5"),
 
 	/** WHIRLPOOL */
-	WHIRLPOOL("WHIRLPOOL", "WHIRLPOOL", "1.0.10118.3.0.55", "http://www.w3.org/2007/05/xmldsig-more#whirlpool");
+	WHIRLPOOL("WHIRLPOOL", "WHIRLPOOL", "1.0.10118.3.0.55", "http://www.w3.org/2007/05/xmldsig-more#whirlpool"),
+
+	/** BELT **/
+	BELT("Belt", "Belt", "1.2.112.0.2.0.34.101.31.81", "http://www.w3.org/2009/xmldsig11#belt-hash256"),
+
+	/** BASH-256 */
+	BASH256("Bash256", "Bash256", "1.2.112.0.2.0.34.101.77.11", "http://www.w3.org/2009/xmldsig11#bash256"),
+
+	/** BASH-384 */
+	BASH384("Bash384", "Bash384", "1.2.112.0.2.0.34.101.77.12", "http://www.w3.org/2009/xmldsig11#bash384"),
+
+	/** BASH-512 */
+	BASH512("Bash512", "Bash512", "1.2.112.0.2.0.34.101.77.13", "http://www.w3.org/2009/xmldsig11#bash512");
 
 	/*
 	 * RFC 2313
